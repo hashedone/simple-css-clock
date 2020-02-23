@@ -1,0 +1,138 @@
+body {
+    background: #18273d;
+}
+
+.container {
+    display: flex;
+}
+
+.clock {
+    width: 400px;
+    height: 400px;
+    color: #b9bec7;
+    font: 14pt sans-serif;
+    position: relative;
+
+    & > .hour {
+        width: 8px;
+        height: 25%;
+        background-color: #b9bec7;
+        transform-origin: bottom center;
+        position: absolute;
+        top: calc(25% + 1px);
+        left: 50%;
+        z-index: 2;
+    }
+
+    & > .minute {
+        width: 5px;
+        height: 35%;
+        background-color: #b9bec7;
+        transform-origin: bottom center;
+        position: absolute;
+        top: calc(15% + 1px);
+        left: 50%;
+        z-index: 3;
+    }
+
+    & > .second {
+        width: 1px;
+        height: 40%;
+        background-color: #18273d;
+        transform-origin: bottom center;
+        position: absolute;
+        border: 1px solid #b9bec7;
+        top: 10%;
+        left: 50%;
+        z-index: 4;
+    }
+
+    & > .center {
+        background-color: #18273d;
+        position: absolute;
+        left: calc(50% - 0.5em);
+        top: calc(50% - 0.5em);
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        border: 3px solid #b9bec7;
+        z-index: 5
+    }
+
+    & > ul {
+        list-style: none;
+
+        & > li {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            text-align: center;
+            line-height: 20px;
+
+            &:nth-child(1) {
+                right: 22%;
+                top: 6.5%;
+            }
+
+            &:nth-child(2) {
+                right: 6%;
+                top: 25%;
+            }
+
+            &:nth-child(3) {
+                right: 1%;
+                top: calc(50% - 0.5em);
+                font: 18pt bold;
+            }
+
+            &:nth-child(4) {
+                right: 6%;
+                top: 69%;
+            }
+
+            &:nth-child(5) {
+                right: 22%;
+                top: 85%;
+            }
+
+            &:nth-child(6) {
+                right: calc(50% - 0.5em);
+                top: calc(99% - 1em);
+                font: 18pt bold;
+            }
+
+            &:nth-child(7) {
+                left: 22%;
+                top: 85%;
+            }
+
+            &:nth-child(8) {
+                left: 6%;
+                top: 69%;
+            }
+
+            &:nth-child(9) {
+                left: 1%;
+                top: calc(50% - 0.5em);
+                font: 18pt bold;
+            }
+
+            &:nth-child(10) {
+                left: 6%;
+                top: 25%;
+            }
+
+            &:nth-child(11) {
+                left: 22%;
+                top: 6.5%;
+            }
+
+            &:nth-child(12) {
+                right: calc(50% - 0.5em);
+                top: 1%;
+                font: 18pt bold;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="clock">
+            <div class="hour"></div>
+            <div class="minute"></div>
+            <div class="second"></div>
+            <div class="center"></div>
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li>10</li>
+                <li>11</li>
+                <li>12</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const hourDiv = document.querySelector('.hour');
+        const minuteDiv = document.querySelector('.minute');
+        const secondDiv = document.querySelector('.second');
+        function update() {
+            let d = new Date();
+
+            let h = (d.getHours() + 11) % 12 + 1;
+            let m = d.getMinutes();
+            let s = d.getSeconds();
+
+            let sa = s * 6;
+            let ma = m * 6 + (sa / 60);
+            let ha = h * 30 + (ma / 5);
+
+            secondDiv.style.transform = `rotate(${sa}deg)`;
+            minuteDiv.style.transform = `rotate(${ma}deg)`;
+            hourDiv.style.transform = `rotate(${ha}deg)`;
+        }
+
+        update();
+        setInterval(update, 1000);
+    </script>
+</body>
+</html>
